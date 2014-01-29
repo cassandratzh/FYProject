@@ -7,6 +7,7 @@ class cancer(models.Model):
 	subtype = models.CharField(max_length=150)
 	cellline = models.CharField(max_length=150)
 
+
 	def __unicode__(self):
 		return self.cancertype + "  .  " + self.subtype + "  .  " + self.cellline
 

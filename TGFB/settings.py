@@ -45,7 +45,6 @@ INSTALLED_APPS = (
     'django_commands',
     'embed_video',
     'dbbackup'
-    #'django_social_share',
     #'javascript_settings'
     
 )

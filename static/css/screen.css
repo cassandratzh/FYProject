@@ -1,3 +1,5 @@
+{% load static %}
+
 table.paleblue {
     border-collapse: collapse;
     border-color: #CCC;
@@ -21,14 +23,22 @@ table.paleblue a:hover {
     color: #036;
 }
 
-table.paleblue td,
 table.paleblue th {
     padding: 5px;
     line-height: 13px;
     border-bottom: 1px solid #EEE;
     border-left: 1px solid #DDD;
-    text-align: left;
+    text-align: center;
 }
+
+table.paleblue td{
+    padding: 5px;
+    line-height: 13px;
+    border-bottom: 1px solid #EEE;
+    border-left: 1px solid #DDD;
+    text-align: center;
+}
+
 
 table.paleblue thead th:first-child,
 table.paleblue thead td:first-child {
@@ -62,7 +72,7 @@ table.paleblue thead th.orderable.desc > a {
 }
 
 table.paleblue tr.odd {
-    background-color: #EDF3FE;
+    background-color: #FFF8DC;
 }
 
 table.paleblue tr.even {

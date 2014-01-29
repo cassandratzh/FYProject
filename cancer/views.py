@@ -1,32 +1,34 @@
 #from django.shortcuts import render
 # Create your views here.
 from django.shortcuts import render_to_response
+from django_tables2 import RequestConfig
 from django.shortcuts import render
 from django.template import RequestContext
 from cancer.models import cancer
 from cancer.models import smads
 from cancer.models import targetedgene
+from cancer.tables  import cancerTable
+from cancer.tables  import smadTable
+from cancer.tables  import genesTable
 
 
 def cancersite(request):
-	#cancer_list = cancer.objects.all()
-	#t = loader.get_template('cancer/index.html')
-	#c = RequestContext({'cancer_list': cancer_list,})
-    return render(request, 'cancersite.html', { 'cancer_list' : cancer.objects.all() }) #main page based on request.
+	table = cancerTable(cancer.objects.all())
+	RequestConfig(request, paginate=False).configure(table)
+	return render(request, 'cancersite.html', {'cancertable': table})
+    #main page based on request.
 
 
 def smadsite(request):
-	#cancer_list = cancer.objects.all()
-	#t = loader.get_template('cancer/index.html')
-	#c = RequestContext({'cancer_list': cancer_list,})
-    return render(request, 'smadsite.html', { 'smads_list' : smads.objects.all()  }) #main page based on request.
-
+	table = smadTable(smads.objects.all())
+	RequestConfig(request, paginate=False).configure(table)
+	return render(request, 'smadsite.html', {'smadtable': table})
+  
 
 def genesite(request):
-	#cancer_list = cancer.objects.all()
-	#t = loader.get_template('cancer/index.html')
-	#c = RequestContext({'cancer_list': cancer_list,})
-    return render(request, 'genesite.html', { 'targetedgene_list' : targetedgene.objects.all() }) #main page based on request.
+	table = genesTable(targetedgene.objects.all())
+	RequestConfig(request, paginate=False).configure(table)
+	return render(request, 'genesite.html', {'genestable': table})
 
 
 def mainpage(request):

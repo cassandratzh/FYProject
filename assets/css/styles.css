@@ -233,7 +233,9 @@ ul.ex_menu li a:hover {
 }
 .sidebar {
 	background-color:#61c0ec;
+	height:250px;
 }
+
 .fbg_resize {
 	padding:24px 40px;
 	color:#fff;
