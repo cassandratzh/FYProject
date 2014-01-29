@@ -1,0 +1,16 @@
+{% if smads_list %}
+        There are {{ smads_list|length }} records:
+
+        <table border="1" width="540">
+        <tr>
+        <th>Cell Lines</th>
+        <th>Smad Types</th>
+        <th>Targeted Genes</th>
+        </tr>
+        {% for b in smads_list %}
+          <tr>  <td> {{b.cellline}}  </td> <td> {{b.smadtype}} </td> <td> {{b.targetedgenes}} </td>
+          </tr>
+        {% endfor %}
+        </tr>
+        </table>
+{% endif %}

@@ -1,0 +1,50 @@
+{% load static %}
+{% load render_table from django_tables2 %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>Targeted Genes</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href= "{% static "assets/css/style.css" %}" media="screen"/> 
+<link rel="stylesheet" href="{% static "assets/css/screen.css" %}" />
+<script type="text/javascript" src="{% static "assets/js/my.js" %}"></script> 
+</head>
+<body>
+<div class="main">
+  <div class="top"></div>
+  <form method="get" class="right" action="http://all-free-download.com/free-website-templates/">
+    <small>
+    <input type="text" class="compad" value="" name="s" size="14" />
+    <input type="submit" class="buttonsubmit" value="Search" style="font-size: 13px;" />
+    </small>
+  </form>
+  <h1><a href="http://all-free-download.com/free-website-templates/">Integrative TGFBeta Database</a></h1>
+  <h2>Information regarding Smad 2, 3 and 4</h2>
+  <div class="space"></div>
+  <div class="navlist">
+    <ul>
+      <li><a href="http://127.0.0.1:8000/">Home</a></li>
+      <li><a href="http://127.0.0.1:8000/cancer/">Targeted Genes</a></li>
+      <li><a href="http://127.0.0.1:8000/admin/">Admin Login</a></li>
+    </ul>
+  </div>
+  <div class="space"></div>
+  <div class="content">
+
+    <div class="post">
+      <div class="posttitle"><a href="">Cancer Types</a></div>
+      <p> <p>
+
+      {% render_table cancer_list %}
+
+
+      <p class="info"> <a href="" title="Comments"> </a></p>
+    </div>
+
+
+  </div>
+  <div class="clear"></div>
+  <div class="footer"> &copy;2014 Integrative TGFBeta Database | Template by <a href="http://krneky.com/">Krneky</a> </div>
+</div>
+<div align=center>This template  downloaded form <a href='http://all-free-download.com/free-website-templates/'>free website templates</a></div></body>
+</html>
